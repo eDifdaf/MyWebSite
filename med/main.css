@@ -1,0 +1,57 @@
+.scroll-box-wrapper {
+  overflow: hidden;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 25px;
+  border: 1px dashed #0d6efd;
+}
+.container.animation{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.container#podcasts{
+  padding-top:60px;
+}
+.container#tutorials{
+  padding-top:60px;
+}
+
+h3{
+  padding-left: 10px;
+}
+
+.col{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll-box {
+  height: 80vh;
+  overflow-y: auto;
+}
+
+.scroll-box::-webkit-scrollbar {
+  width: 12px;
+}
+
+.scroll-box::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #0d6efd;
+}
+
+.col.podcast{
+  margin: 3dvi;
+}
+li{
+  margin: 2px;
+}
+.card{
+  min-width: 300px;
+}
+.card-img-top{
+  height: 2dvh;
+}
