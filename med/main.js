@@ -1,5 +1,6 @@
 $(document).ready(function () {
   var podcastDivs = $(".col.podcast");
+  var tutorialDivs = $(".col.tutorial");
   var index = 1;
 
   // Function to load file content
@@ -8,17 +9,44 @@ $(document).ready(function () {
       url: filePath,
       dataType: "text",
       success: function (data) {
-        var firstLine = data.split("\n")[0];
-        var secLine = data.split("\n")[1];
+        var Author = data.split("\n")[0];
+        var TitlePod = data.split("\n")[1];
+        var PodLength = data.split("\n")[2];
+        var TitleTut = data.split("\n")[3];
+        var TutLength = data.split("\n")[4];
+        if (TitlePod != undefined) {
+          var newElement =
+            '<div class="card style="width: 18rem;"><img src="red.png" class="card-img-top"><div class="card-body"><h5 class="card-title">' +
+            Author +
+            '</h5><p class="card-text">' +
+            TitlePod +
+            '</p><p class="card-text">' +
+            PodLength +
+            '</p><a href="#" class="btn btn-primary podcast">Look at content</a></div></div>';
+        } else {
+          var newElement =
+            '<div class="card style="width: 18rem;"><img src="red.png" class="card-img-top"><div class="card-body"><h5 class="card-title">' +
+            Author +
+            '</h5><div class="spinner-grow" role="status"><span class="visually-hidden">Loading...</span></div></div></div>';
+        }
+        podcastDivs.eq(index).append(newElement);
 
-        var newElement =
-          '<div class="card style="width: 18rem;"><img src="red.png" class="card-img-top"><div class="card-body"><h5 class="card-title">' +
-          firstLine +
+        if(TitleTut != undefined){
+          var newElement =
+          '<div class="card style="width: 18rem;"><img src="green.png" class="card-img-top"><div class="card-body"><h5 class="card-title">' +
+          Author +
           '</h5><p class="card-text">' +
-          secLine +
-          '</p><a href="#" class="btn btn-primary">Look at content</a></div></div>';
-
-        podcastDivs.eq(index).append(newElement); // Use eq(index) to target specific podcast div
+          TitleTut +
+          '</p><p class="card-text">' +
+          TutLength +
+          '</p><a href="#" class="btn btn-primary tutorial">Look at content</a></div></div>';
+        } else{
+          var newElement =
+            '<div class="card style="width: 18rem;"><img src="green.png" class="card-img-top"><div class="card-body"><h5 class="card-title">' +
+            Author +
+            '</h5><div class="spinner-grow" role="status"><span class="visually-hidden">Loading...</span></div></div></div>';
+        }
+        tutorialDivs.eq(index).append(newElement);
       },
       error: function (xhr, status, error) {
         console.error("Error loading file:", error);
@@ -27,7 +55,6 @@ $(document).ready(function () {
   }
   podcastDivs.each(function () {
     var filep = "./content/" + index + "/" + index + ".txt";
-    loadFile(filep, index - 1); // Pass index - 1 to loadFile function to match array indexing
     index++;
   });
 });
