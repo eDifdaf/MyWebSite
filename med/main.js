@@ -31,22 +31,22 @@ $(document).ready(function () {
         }
         podcastDivs.eq(index).append(newElement);
 
-        if(TitleTut != undefined){
-          var newElement =
-          '<div class="card style="width: 18rem;"><img src="green.png" class="card-img-top"><div class="card-body"><h5 class="card-title">' +
-          Author +
-          '</h5><p class="card-text">' +
-          TitleTut +
-          '</p><p class="card-text">' +
-          TutLength +
-          '</p><a href="#" class="btn btn-primary tutorial">Look at content</a></div></div>';
-        } else{
-          var newElement =
+        if (TitleTut != undefined) {
+          var newElement2 =
+            '<div class="card style="width: 18rem;"><img src="green.png" class="card-img-top"><div class="card-body"><h5 class="card-title">' +
+            Author +
+            '</h5><p class="card-text">' +
+            TitleTut +
+            '</p><p class="card-text">' +
+            TutLength +
+            '</p><a href="#" class="btn btn-primary tutorial">Look at content</a></div></div>';
+        } else {
+          var newElement2 =
             '<div class="card style="width: 18rem;"><img src="green.png" class="card-img-top"><div class="card-body"><h5 class="card-title">' +
             Author +
             '</h5><div class="spinner-grow" role="status"><span class="visually-hidden">Loading...</span></div></div></div>';
         }
-        tutorialDivs.eq(index).append(newElement);
+        tutorialDivs.eq(index).append(newElement2);
       },
       error: function (xhr, status, error) {
         console.error("Error loading file:", error);
