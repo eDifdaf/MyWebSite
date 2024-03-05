@@ -306,11 +306,12 @@
       var button = $(event.relatedTarget); // Button that triggered the modal
       var content = button.data('content'); // Extract info from data-* attributes
       var modal = $(this);
-      var audio = document.createElement('audio');
-      audio.controls = true;
-      audio.src = '/med/content/'+content+'/'+content+'.mp4';
-      modal.find('.modal-body').append(audio);
+      var video = document.createElement('video');
+      video.controls = true;
+      video.src = '/med/content/'+content+'/'+content+'.mp4';
+      modal.find('.modal-body').append(video);
     });
+
     //when the close button is on the modal is clicked the modal is closed and the audio or video is removed
     $('#PodcastModal').on('hidden.bs.modal', function (event) {
       var modal = $(this);
