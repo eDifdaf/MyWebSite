@@ -55,7 +55,7 @@ $(document).ready(function () {
     });
   }
   podcastDivs.each(function () {
-    var filep = "./content/" + index + "/" + index + ".txt";
+    var filep = "/Medientechnik/content/" + index + "/" + index + ".txt";
     loadFile(filep, index);
     index++;
   });
