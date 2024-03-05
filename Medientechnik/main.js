@@ -17,7 +17,7 @@ $(document).ready(function () {
         console.log(index,TitlePod);
         if (TitlePod !== undefined && TitlePod !== "\r") {
           var newElement =
-            '<div class="card style="width: 18rem;"><img src="red.png" class="card-img-top"><div class="card-body"><h5 class="card-title">' +
+            '<div class="card style="width: 18rem;"><img src="/Medientechnik/red.png" class="card-img-top"><div class="card-body"><h5 class="card-title">' +
             Author +
             '</h5><p class="card-text">' +
             TitlePod +
@@ -26,7 +26,7 @@ $(document).ready(function () {
             '</p><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#PodcastModal" data-content="'+index+'">Look at content</button></div></div>';
         } else {
           var newElement =
-            '<div class="card style="width: 18rem;"><img src="red.png" class="card-img-top"><div class="card-body"><h5 class="card-title">' +
+            '<div class="card style="width: 18rem;"><img src="/Medientechnik/red.png" class="card-img-top"><div class="card-body"><h5 class="card-title">' +
             Author +
             '</h5><div class="spinner-grow" role="status"><span class="visually-hidden">Loading...</span></div></div></div>';
         }
@@ -34,7 +34,7 @@ $(document).ready(function () {
 
         if (TitleTut !== undefined && TitleTut !== "\r") {
           var newElement =
-            '<div class="card style="width: 18rem;"><img src="green.png" class="card-img-top"><div class="card-body"><h5 class="card-title">' +
+            '<div class="card style="width: 18rem;"><img src="/Medientechnik/green.png" class="card-img-top"><div class="card-body"><h5 class="card-title">' +
             Author +
             '</h5><p class="card-text">' +
             TitleTut +
@@ -43,7 +43,7 @@ $(document).ready(function () {
             '</p><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#TutorialModal" data-content="'+index+'">Look at content</button></div></div>';
         } else {
           var newElement =
-            '<div class="card style="width: 18rem;"><img src="green.png" class="card-img-top"><div class="card-body"><h5 class="card-title">' +
+            '<div class="card style="width: 18rem;"><img src="/Medientechnik/green.png" class="card-img-top"><div class="card-body"><h5 class="card-title">' +
             Author +
             '</h5><div class="spinner-grow" role="status"><span class="visually-hidden">Loading...</span></div></div></div>';
         }
