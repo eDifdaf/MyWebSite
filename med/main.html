@@ -282,9 +282,11 @@
       if ($("body").attr("data-bs-theme") == "dark") {
         $("body").attr("data-bs-theme", "light");
         $(".theme-toggle").text("Dark Mode");
+        $(".navbar-brand").attr("src", "github-mark.ico");
       } else {
         $("body").attr("data-bs-theme", "dark");
         $(".theme-toggle").text("Light Mode");
+        $(".navbar-brand").attr("src", "github-mark-white.ico");
       }
     });
     //when the <a href="#" class="btn btn-primary">Look at content</a> is clicked a modal pops up with a media player
