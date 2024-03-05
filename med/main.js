@@ -22,14 +22,13 @@ $(document).ready(function () {
             TitlePod +
             '</p><p class="card-text">' +
             PodLength +
-            '</p><a href="#" class="btn btn-primary podcast">Look at content</a></div></div>';
+            '</p><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#PodcastModal">Look at content</button></div></div>';
         } else {
           var newElement =
             '<div class="card style="width: 18rem;"><img src="red.png" class="card-img-top"><div class="card-body"><h5 class="card-title">' +
             Author +
             '</h5><div class="spinner-grow" role="status"><span class="visually-hidden">Loading...</span></div></div></div>';
         }
-        console.log(newElement);
         podcastDivs.eq(index-1).append(newElement);
 
         if (TitleTut !== undefined) {
@@ -40,7 +39,7 @@ $(document).ready(function () {
             TitleTut +
             '</p><p class="card-text">' +
             TutLength +
-            '</p><a href="#" class="btn btn-primary tutorial">Look at content</a></div></div>';
+            '</p><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#TutorialModal">Look at content</button></div></div>';
         } else {
           var newElement =
             '<div class="card style="width: 18rem;"><img src="green.png" class="card-img-top"><div class="card-body"><h5 class="card-title">' +
