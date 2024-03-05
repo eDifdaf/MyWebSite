@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Medien Technik</title>
+    <title>Medientechnikien Technik</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -23,7 +23,7 @@
       crossorigin="anonymous"
     ></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="/med/main.js" defer></script>
+  <script src="/Medientechnik/main.js" defer></script>
 
   </head>
   <body data-bs-theme="dark">
@@ -176,7 +176,7 @@
     <footer class="bg-body-tertiary text-center">
       <!-- Grid container -->
       <div class="container p-4 pb-0">
-        <!-- Section: Social media -->
+        <!-- Section: Social Medientechnikia -->
         <section class="mb-4">
           <!-- Facebook -->
           <a
@@ -234,10 +234,7 @@
             ><i class="fab fa-github"></i
           ></a>
         </section>
-        <!-- Section: Social media -->
       </div>
-      <!-- Grid container -->
-      <!-- Copyright -->
       <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
         © 2024 Copyright:
         <a class="text-body" href="https://difdaf.at/">difdaf.at</a>
@@ -289,7 +286,6 @@
         $(".navbar-brand").attr("src", "github-mark-white.ico");
       }
     });
-    //when the <a href="#" class="btn btn-primary">Look at content</a> is clicked a modal pops up with a media player
     $(".btn.btn-primary.podcast").click(function () {
       var modal
     });
@@ -300,7 +296,7 @@
       var modal = $(this);
       var audio = document.createElement('audio');
       audio.controls = true;
-      audio.src = '/med/content/'+content+'/'+content+'.mp3';
+      audio.src = '/Medientechnikientechnik/content/'+content+'/'+content+'.mp3';
       modal.find('.modal-body').append(audio);
     });
 
@@ -310,7 +306,7 @@
       var modal = $(this);
       var video = document.createElement('video');
       video.controls = true;
-      video.src = '/med/content/'+content+'/'+content+'.mp4';
+      video.src = '/Medientechnikientechnik/content/'+content+'/'+content+'.mp4';
       modal.find('.modal-body').append(video);
     });
 
