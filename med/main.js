@@ -47,7 +47,6 @@ $(document).ready(function () {
             Author +
             '</h5><div class="spinner-grow" role="status"><span class="visually-hidden">Loading...</span></div></div></div>';
         }
-        console.log(newElement);
         tutorialDivs.eq(index-1).append(newElement);
       },
       error: function (xhr, status, error) {
@@ -56,7 +55,6 @@ $(document).ready(function () {
     });
   }
   podcastDivs.each(function () {
-    console.log(index);
     var filep = "./content/" + index + "/" + index + ".txt";
     loadFile(filep, index);
     index++;
