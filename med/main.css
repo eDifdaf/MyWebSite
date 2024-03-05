@@ -5,6 +5,11 @@
   border-radius: 25px;
   border: 1px dashed #0d6efd;
 }
+.container.image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .container.animation{
   padding-top: 50px;
   padding-bottom: 50px;

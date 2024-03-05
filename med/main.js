@@ -14,7 +14,7 @@ $(document).ready(function () {
         var PodLength = data.split("\n")[2];
         var TitleTut = data.split("\n")[3];
         var TutLength = data.split("\n")[4];
-        if (TitlePod != undefined) {
+        if (TitlePod !== undefined) {
           var newElement =
             '<div class="card style="width: 18rem;"><img src="red.png" class="card-img-top"><div class="card-body"><h5 class="card-title">' +
             Author +
@@ -29,24 +29,26 @@ $(document).ready(function () {
             Author +
             '</h5><div class="spinner-grow" role="status"><span class="visually-hidden">Loading...</span></div></div></div>';
         }
-        podcastDivs.eq(index).append(newElement);
+        console.log(newElement);
+        podcastDivs.eq(index-1).append(newElement);
 
-        if(TitleTut != undefined){
+        if (TitleTut !== undefined) {
           var newElement =
-          '<div class="card style="width: 18rem;"><img src="green.png" class="card-img-top"><div class="card-body"><h5 class="card-title">' +
-          Author +
-          '</h5><p class="card-text">' +
-          TitleTut +
-          '</p><p class="card-text">' +
-          TutLength +
-          '</p><a href="#" class="btn btn-primary tutorial">Look at content</a></div></div>';
-        } else{
+            '<div class="card style="width: 18rem;"><img src="green.png" class="card-img-top"><div class="card-body"><h5 class="card-title">' +
+            Author +
+            '</h5><p class="card-text">' +
+            TitleTut +
+            '</p><p class="card-text">' +
+            TutLength +
+            '</p><a href="#" class="btn btn-primary tutorial">Look at content</a></div></div>';
+        } else {
           var newElement =
             '<div class="card style="width: 18rem;"><img src="green.png" class="card-img-top"><div class="card-body"><h5 class="card-title">' +
             Author +
             '</h5><div class="spinner-grow" role="status"><span class="visually-hidden">Loading...</span></div></div></div>';
         }
-        tutorialDivs.eq(index).append(newElement);
+        console.log(newElement);
+        tutorialDivs.eq(index-1).append(newElement);
       },
       error: function (xhr, status, error) {
         console.error("Error loading file:", error);
@@ -54,7 +56,9 @@ $(document).ready(function () {
     });
   }
   podcastDivs.each(function () {
+    console.log(index);
     var filep = "./content/" + index + "/" + index + ".txt";
+    loadFile(filep, index);
     index++;
   });
 });
