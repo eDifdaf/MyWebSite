@@ -248,11 +248,10 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Tutorial</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body">
-            ...
+          <div class="modal-body" id="modal-body-content">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -265,11 +264,10 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Podcast</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body">
-            ...
+          <div class="modal-body" id="modal-body-content">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -294,6 +292,35 @@
       var modal
     });
 
+    $('#PodcastModal').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget); // Button that triggered the modal
+      var content = button.data('content'); // Extract info from data-* attributes
+      var modal = $(this);
+      var audio = document.createElement('audio');
+      audio.controls = true;
+      audio.src = '/med/content/'+content+'/'+content+'.mp3';
+      modal.find('.modal-body').append(audio);
+    });
+
+    $('#TutorialModal').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget); // Button that triggered the modal
+      var content = button.data('content'); // Extract info from data-* attributes
+      var modal = $(this);
+      var audio = document.createElement('audio');
+      audio.controls = true;
+      audio.src = '/med/content/'+content+'/'+content+'.mp4';
+      modal.find('.modal-body').append(audio);
+    });
+    //when the close button is on the modal is clicked the modal is closed and the audio or video is removed
+    $('#PodcastModal').on('hidden.bs.modal', function (event) {
+      var modal = $(this);
+      modal.find('.modal-body').empty();
+    });
+
+    $('#TutorialModal').on('hidden.bs.modal', function (event) {
+      var modal = $(this);
+      modal.find('.modal-body').empty();
+    });
 
   });
   </script>

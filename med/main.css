@@ -64,3 +64,9 @@ li{
 .card-img-top{
   height: 2dvh;
 }
+
+.modal-body#modal-body-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

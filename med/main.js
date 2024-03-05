@@ -14,7 +14,8 @@ $(document).ready(function () {
         var PodLength = data.split("\n")[2];
         var TitleTut = data.split("\n")[3];
         var TutLength = data.split("\n")[4];
-        if (TitlePod !== undefined) {
+        console.log(index,TitlePod);
+        if (TitlePod !== undefined && TitlePod !== "\r") {
           var newElement =
             '<div class="card style="width: 18rem;"><img src="red.png" class="card-img-top"><div class="card-body"><h5 class="card-title">' +
             Author +
@@ -22,7 +23,7 @@ $(document).ready(function () {
             TitlePod +
             '</p><p class="card-text">' +
             PodLength +
-            '</p><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#PodcastModal">Look at content</button></div></div>';
+            '</p><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#PodcastModal" data-content="'+index+'">Look at content</button></div></div>';
         } else {
           var newElement =
             '<div class="card style="width: 18rem;"><img src="red.png" class="card-img-top"><div class="card-body"><h5 class="card-title">' +
@@ -31,7 +32,7 @@ $(document).ready(function () {
         }
         podcastDivs.eq(index-1).append(newElement);
 
-        if (TitleTut !== undefined) {
+        if (TitleTut !== undefined && TitleTut !== "\r") {
           var newElement =
             '<div class="card style="width: 18rem;"><img src="green.png" class="card-img-top"><div class="card-body"><h5 class="card-title">' +
             Author +
@@ -39,7 +40,7 @@ $(document).ready(function () {
             TitleTut +
             '</p><p class="card-text">' +
             TutLength +
-            '</p><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#TutorialModal">Look at content</button></div></div>';
+            '</p><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#TutorialModal" data-content="'+index+'">Look at content</button></div></div>';
         } else {
           var newElement =
             '<div class="card style="width: 18rem;"><img src="green.png" class="card-img-top"><div class="card-body"><h5 class="card-title">' +
