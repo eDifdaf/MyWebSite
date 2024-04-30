@@ -14,7 +14,6 @@ $(document).ready(function () {
         var PodLength = data.split("\n")[2];
         var TitleTut = data.split("\n")[3];
         var TutLength = data.split("\n")[4];
-        console.log(index,TitlePod);
         if (TitlePod !== undefined && TitlePod !== "\r") {
           var newElement =
             '<div class="card style="width: 18rem;"><img src="/Medientechnik/red.png" class="card-img-top"><div class="card-body"><h5 class="card-title">' +
